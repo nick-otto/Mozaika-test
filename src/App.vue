@@ -5,7 +5,7 @@
         :name="'Название поля'"
         :header="'Текст перед полем ввода'"
         :showCounter="true"
-        :maxlength="10"
+        :maxlength="1000"
     />
   </main>
 
