@@ -6,13 +6,13 @@
   <div class="text-area">
 
     <textarea
+        v-model="modelValue"
         class="text-area__field"
         placeholder=" "
         :name="name"
         :maxlength="maxlength"
         :value="modelValue"
         :style="modelValue?.length >= maxlength? 'background: var(--textarea-backgroung-error)' : ''"
-        @change="checkLength($event.target.value)"
     />
 
     <Loader
@@ -63,14 +63,11 @@ const showCounter = computed(() => !!props?.showCounter)
 
 const modelValue = ref('')
 const loaderStart = ref(false)
+
 const cleanTextArea = () => {
   modelValue.value = ''
   loaderStart.value = true
   setTimeout(() => loaderStart.value = false, 500)
-}
-
-const checkLength = (value) => {
-  modelValue.value = value
 }
 
 </script>
